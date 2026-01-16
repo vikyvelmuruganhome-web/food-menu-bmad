@@ -1,4 +1,7 @@
 # BMAD3 - Angular Food Menu Application
+# Screenshot
+<img width="1899" height="947" alt="image" src="https://github.com/user-attachments/assets/3896ee8a-347e-48d3-afe1-923e69ff4b48" />
+
 
 An Angular-based food menu application that provides an interactive menu experience with hover-to-preview functionality for customers.
 
