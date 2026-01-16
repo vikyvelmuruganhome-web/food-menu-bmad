@@ -1,0 +1,263 @@
+/* Menu List Component Styles - Mobile First, Responsive Design */
+
+.menu-list {
+  padding: 1.5rem 0;
+}
+
+.menu-list__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.menu-list__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Menu Item Cards */
+.menu-item {
+  padding: 1.25rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.menu-item:active {
+  transform: scale(0.98);
+}
+
+.menu-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.menu-item__name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  flex: 1;
+}
+
+.menu-item__price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #27ae60;
+  white-space: nowrap;
+  padding: 0.5rem;
+  background-color: #f0fdf4;
+  border-radius: 4px;
+  min-width: 60px;
+  text-align: right;
+}
+
+.menu-item__description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0 0 0.75rem 0;
+  flex: 1;
+}
+
+.menu-item__footer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.menu-item__category {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #666;
+  background-color: #f5f5f5;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+/* Empty State */
+.menu-list__empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #999;
+}
+
+/* Tooltip Styles */
+.menu-item__tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.menu-item__tooltip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0.7;
+}
+
+.menu-item:hover .menu-item__tooltip {
+  opacity: 1;
+}
+
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+  .menu-list {
+    padding: 2rem 0;
+  }
+
+  .menu-list__title {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .menu-list__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .menu-item {
+    padding: 1.5rem;
+    min-height: 140px;
+  }
+
+  .menu-item__name {
+    font-size: 1.35rem;
+  }
+
+  .menu-item__price {
+    font-size: 1.35rem;
+  }
+
+  .menu-item__description {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .menu-list__container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .menu-item {
+    padding: 1.75rem;
+    min-height: 160px;
+  }
+
+  .menu-item__name {
+    font-size: 1.4rem;
+  }
+
+  .menu-item__price {
+    font-size: 1.4rem;
+    min-width: 70px;
+  }
+
+  .menu-item__description {
+    font-size: 1.05rem;
+  }
+}
+
+/* Large Desktop: 1440px and up */
+@media (min-width: 1440px) {
+  .menu-list {
+    padding: 2.5rem 0;
+  }
+
+  .menu-list__container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .menu-item {
+    transition: none;
+  }
+
+  .menu-item:active {
+    transform: none;
+  }
+}
+
+/* Accessibility: High Contrast */
+@media (prefers-contrast: more) {
+  .menu-item {
+    border: 2px solid #2c3e50;
+  }
+
+  .menu-item__name {
+    font-weight: 800;
+  }
+
+  .menu-item__price {
+    font-weight: 900;
+  }
+}
+
+/* Touch targets: Ensure minimum 44x44px for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .menu-item {
+    min-height: 44px;
+    padding: 1rem;
+  }
+
+  .menu-item__header {
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .menu-item__price {
+    min-width: 44px;
+    padding: 0.5rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+/* Hide tooltip on small screens */
+@media (max-width: 768px) {
+  .menu-item__tooltip {
+    display: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .menu-item {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
